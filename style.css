@@ -1,0 +1,12 @@
+
+
+.orders{
+
+    background: rgb(145, 144, 144);
+    width: 200px;
+}
+
+.result{
+
+    display: flex;
+}
