@@ -6,7 +6,7 @@ const orders = [
         extra: "-",
         ital: "Pepsi",
         ar: 2000,
-        kep: ""
+        kep: "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     },
     {
         id: 2,
@@ -14,7 +14,7 @@ const orders = [
         extra: "Olajbogyó",
         ital: "Mentes víz",
         ar: 2300,
-        kep: ""
+        kep: "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     },
     {
         id: 3,
@@ -22,7 +22,7 @@ const orders = [
         extra: "-",
         ital: "Sprite",
         ar: 2250,
-        kep: ""
+        kep: "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     },
     {
         id: 4,
@@ -30,7 +30,7 @@ const orders = [
         extra: "Jalapeno",
         ital: "Fanta",
         ar: 2300,
-        kep: ""
+        kep: "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     },
     {
         id: 5,
@@ -38,7 +38,7 @@ const orders = [
         extra: "-",
         ital: "Fanta",
         ar: 2200,
-        kep: ""
+        kep: "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     },
     {
         id: 6,
@@ -46,31 +46,34 @@ const orders = [
         extra: "-",
         ital: "Coke zero",
         ar: 2500,
-        kep: ""
+        kep: "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     }
 ]
 
-orders.map((pizza)=>{
+const result = document.querySelector(".result");
 
-    let output = "";
+let output = "";
 
-    orders.map((elem)=>{
+orders.map((order)=>{
+
+    output += `
     
-        output += `
-        
-        <div class='orders'>
-        <p>id: ${elem.id}</p>
-        <p>pizza: ${elem.pizza}</p>
-        <p>extra: ${elem.extra}</p>
-        <p>ital: ${elem.ital}</p>
-        <p>ar: ${elem.ar}</p>
+        <div class='order'>
+
+            <div>
+                <img src='${order.kep}' alt='pizza'/>
+            </div>
+
+            <h3>${order.pizza}</h3>
+            <hr>
+            <h4>Ár: ${order.ar}</h4>
+            <p>Extra: ${order.extra}</p>
+            <p>Ital: ${order.ital}</p>
+
         </div>
-    
-        `
-    })
-    
-    document.body.innerHTML = output;
 
+    `
 
-   console.log(pizza);
 })
+
+result.innerHTML = output;
